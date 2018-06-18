@@ -1,0 +1,9 @@
+{
+    "description": "runtime dependencies for js_library",
+    "devDependencies": {
+        "@babel/cli": "^7.0.0-beta.49",
+        "@babel/core": "^v7.0.0-beta.49",
+        "@babel/plugin-transform-modules-amd": "^v7.0.0-beta.49",
+        "source-map-support": "^0.5.6"
+    }
+}
