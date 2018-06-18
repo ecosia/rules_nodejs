@@ -1,3 +1,4 @@
+const buble = require('rollup-plugin-buble');
 const nodeResolve = require('rollup-plugin-node-resolve');
 const sourcemaps = require('rollup-plugin-sourcemaps');
 const isBuiltinModule = require('is-builtin-module');
@@ -142,6 +143,11 @@ module.exports = {
   plugins: [TMPL_additional_plugins].concat([
     {resolveId: resolveBazel},
     nodeResolve({jsnext: true, module: true, customResolveOptions: {moduleDirectory}}),
+    buble({
+      transforms: {
+        dangerousForOf: true,
+      },
+    }),
     {resolveId: notResolved},
     sourcemaps(),
   ]),
